@@ -1,1 +1,1 @@
-#Creating a reusable Student info card 
+Reusable Student info card 
