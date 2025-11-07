@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Online Clipboard</title>
+
+    <!-- ✅ Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              animation: {
+                grid: 'gridMove 15s linear infinite',
+                glow: 'glowPulse 3s ease-in-out infinite alternate'
+              },
+              keyframes: {
+                gridMove: {
+                  from: { backgroundPosition: '0 0' },
+                  to: { backgroundPosition: '40px 40px' }
+                },
+                glowPulse: {
+                  from: { textShadow: '0 0 10px #00aaff' },
+                  to: { textShadow: '0 0 25px #33ccff, 0 0 45px #0077ff' }
+                }
+              }
+            }
+          }
+        }
+    </script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-sky-100 flex justify-center items-center relative overflow-hidden">
+
+<!-- ⚡ Animated Grid Background -->
+<div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[length:40px_40px] animate-grid"></div>
+
+<!-- ⚡ Login Container -->
+<div class="relative z-10 w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 shadow-[0_0_40px_rgba(56,189,248,0.25)] text-center">
+    <h1 class="text-3xl font-bold text-sky-400 animate-glow drop-shadow-lg mb-6">Login</h1>
+
+    <p th:if="${error}" th:text="${error}" class="text-red-400 font-medium mb-4"></p>
+
+    <form action="/login" method="POST" class="space-y-6">
+        <!-- Username -->
+        <div class="text-left">
+            <label for="username" class="block text-sky-200 font-medium mb-1">Username:</label>
+            <input type="text" id="username" name="username" required
+                   class="w-full bg-black/40 border border-sky-500/40 rounded-md p-2 text-sky-100 focus:ring-2 focus:ring-sky-400 outline-none transition">
+        </div>
+
+        <!-- Password -->
+        <div class="text-left">
+            <label for="password" class="block text-sky-200 font-medium mb-1">Password:</label>
+            <input type="password" id="password" name="password" required
+                   class="w-full bg-black/40 border border-sky-500/40 rounded-md p-2 text-sky-100 focus:ring-2 focus:ring-sky-400 outline-none transition">
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+                class="w-full bg-gradient-to-r from-sky-600 to-blue-700 text-white font-semibold py-2 rounded-lg hover:scale-105 hover:shadow-[0_0_20px_rgba(56,189,248,0.6)] transition">
+            Login
+        </button>
+    </form>
+
+    <!-- Register Link -->
+    <p class="mt-6 text-sky-300">
+        Don’t have an account?
+        <a href="/register" class="text-yellow-300 hover:text-yellow-200 hover:drop-shadow-[0_0_8px_yellow] transition">Register here</a>
+    </p>
+</div>
+</body>
+</html>
