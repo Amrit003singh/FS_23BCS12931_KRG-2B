@@ -12,7 +12,7 @@ Java 21 is used in this project, please use the appropriate JDK, ms-21 microsoft
 
 Clone: 
 ```bash
-git clone https://github.com/sambhavmahajan/OnlineClipboard.git
+git clone https://github.com/Amrit003singh/OnlineClipboard.git
 ```
 
 Please edit the following properties in application.properties
