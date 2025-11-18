@@ -1,0 +1,57 @@
+/* Responsive registration form styles */
+*{box-sizing:border-box}
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --accent: #4f46e5;
+  --accent-dark: #4338ca;
+  --text: #0f172a;
+}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  background: linear-gradient(180deg,#eef2ff 0%,var(--bg) 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+.page{width:100%;max-width:420px}
+.register-form{
+  background:var(--card);
+  padding:28px;
+  border-radius:12px;
+  box-shadow:0 6px 30px rgba(16,24,40,0.08);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.register-form h1{margin:0;font-size:1.4rem}
+.subtitle{margin:0;color:#6b7280;font-size:0.95rem}
+.detail{margin:6px 0 0;color:#4b5563;font-size:0.92rem}
+.hint{display:block;margin-top:6px;color:#6b7280;font-size:0.85rem}
+label{font-size:0.85rem;color:#374151}
+input{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid #e6e9ef;
+  border-radius:8px;
+  font-size:1rem;
+}
+input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(79,70,229,0.08)}
+.btn{
+  margin-top:8px;
+  padding:12px 14px;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  transition:transform .12s ease,box-shadow .12s ease,background .12s;
+}
+.btn:hover{background:linear-gradient(90deg,var(--accent),var(--accent-dark));transform:translateY(-2px);box-shadow:0 8px 20px rgba(79,70,229,0.18)}
+.btn:active{transform:translateY(0)}
+@media (max-width:420px){.register-form{padding:20px;border-radius:10px}}
